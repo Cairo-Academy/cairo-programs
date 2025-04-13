@@ -31,3 +31,33 @@ scarb prove --execution-id 1
 ```bash
 scarb verify --execution-id 1
 ```
+
+## Testing
+
+Validate the program with the test suite.
+
+```bash
+scarb cairo-test
+```
+
+- Tests cover:
+  - Correct hashes for `0`, `42`, and `927456318`.
+  - Incorrect hash detection.
+  - Panic on invalid verification.
+
+Use tests like `test_small_positive_correct_hash` to compute valid hashes for `args.json`.
+
+## Installation
+
+1. Clone the repo:
+
+   ```bash
+   git clone <repo-url>
+   cd data_integrity_check
+   ```
+
+2. Build:
+
+   ```bash
+   scarb build
+   ```
