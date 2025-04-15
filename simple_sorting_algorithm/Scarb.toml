@@ -13,4 +13,4 @@ enable-gas = false
 cairo_execute = "2.10.1"
 
 [dev-dependencies]
-cairo_test = "2.11.2"
+cairo_test = "2.9.4"
