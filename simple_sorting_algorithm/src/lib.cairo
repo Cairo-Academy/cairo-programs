@@ -1,5 +1,5 @@
 /// Sorts a list of integers using bubble sort, returning the sorted array.
-/// Uses u32 for safe integer operations. Built with Cairo 2.10.1.
+/// Uses u32 for safe integer operations. Built with Cairo 2.11.4.
 /// Supports STARK proof generation via `scarb prove`.
 
 use core::array::ArrayTrait;
@@ -62,13 +62,9 @@ fn is_sorted(arr: @Array<u32>) -> bool {
 
 // Main executable function
 #[executable]
-fn main(input: Array<u32>) -> u32 {
-    let sorted = bubble_sort(input);
-    if is_sorted(@sorted) {
-        1
-    } else {
-        0
-    }
+fn main() -> Array<u32> {
+    let input = array![4, 2, 1, 3]; // Hardcoded input
+    bubble_sort(input)
 }
 
 
