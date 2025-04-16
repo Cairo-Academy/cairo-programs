@@ -18,7 +18,7 @@ fn bubble_sort(mut arr: Array<u32>) -> Array<u32> {
         swapped = false;
         let mut j: usize = 0;
 
-        // Fixed loop condition with !=
+        // Using `saturating_sub` to provide a safe way to subtract numbers, preventing underflow
         while j != len.saturating_sub(i + 1) {
             let current = *arr.at(j);
             let next = *arr.at(j + 1);
@@ -50,7 +50,7 @@ fn bubble_sort(mut arr: Array<u32>) -> Array<u32> {
 fn is_sorted(arr: @Array<u32>) -> bool {
     let len = arr.len();
     let mut i: usize = 0;
-    // Fixed loop condition with !=
+    // Using `saturating_sub` to prevent underflow
     while i != len.saturating_sub(1) {
         if *arr.at(i) > *arr.at(i + 1) {
             return false;
